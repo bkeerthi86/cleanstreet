@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Clean Street</title>
+  <script src="https://cdn.tailwindcss.com">
+    
+const loginForm = document.querySelector('form');
+
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = loginForm.email.value;
+  const password = loginForm.password.value;
+
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(u => u.email === email && u.password === password);
+
+  if (user) {
+    alert(`Login successful! Welcome, ${user.name}`);
+    // Save current logged-in user
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    // Redirect to dashboard
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Invalid email or password!');
+  }
+});
+
+  </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Login to Your Account</h2>
+
+    <form action="/login" method="POST" class="space-y-5">
+      
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Email Address</label>
+        <input type="email" name="email" required
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Password</label>
+        <input type="password" name="password" required
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      
+      <button type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition">
+        Login
+      </button>
+
+      
+      <p class="text-center text-sm text-gray-600 mt-4">
+        Don't have an account?
+        <a href="register.html" class="text-blue-600 hover:underline font-medium">Register here</a>
+      </p>
+    </form>
+  </div>
+
+</body>
+</html>
