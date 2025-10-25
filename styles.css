@@ -1,0 +1,504 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.21;
+    overflow-x: hidden;
+}
+
+/* Desktop Frame Container - matches Figma exactly */
+.desktop-frame {
+    width: 1440px;
+    height: 1268px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    position: relative;
+    border: 1px solid #FFFFFF;
+}
+
+/* Navigation Bar - exact Figma positioning */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 90px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Logo positioning - exact from Figma */
+.nav-logo {
+    position: absolute;
+    left: 15px;
+    top: -12px;
+    width: 215px;
+    height: 127px;
+}
+
+.logo-image {
+    width: 215px;
+    height: 127px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Menu - exact positioning from Figma */
+.nav-menu {
+    position: absolute;
+    left: 464px;
+    top: 42px;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #4E8DF5;
+}
+
+/* Navigation Auth Buttons - exact positioning from Figma */
+.nav-auth {
+    position: absolute;
+    right: 15px;
+    top: 32px;
+    display: flex;
+    gap: 9px;
+}
+
+.nav-login {
+    width: 96px;
+    height: 41px;
+    background-color: transparent;
+    border: 1px solid #D1D1D1;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.21;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.nav-login:hover {
+    background-color: #F5F6FA;
+    opacity: 1;
+}
+
+.nav-register {
+    width: 116px;
+    height: 40px;
+    background-color: #4E8DF5;
+    border: 1px solid #4E8DF5;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.21;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-register:hover {
+    background-color: #3A7AE8;
+}
+
+/* Main Background - exact from Figma */
+.main-background {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 1440px;
+    height: 1178px;
+    background-color: #F5F6FA;
+}
+
+/* Login Form Container - exact positioning from Figma */
+.login-form-container {
+    position: absolute;
+    left: 321px;
+    top: 100px;
+    width: 766px;
+    height: 747px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.21;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 50px;
+    width: 346px;
+    height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.21;
+    color: #000000;
+    margin-bottom: 10px;
+    width: 53px;
+    height: 24px;
+}
+
+.form-input {
+    width: 678px;
+    height: 60px;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4E8DF5;
+}
+
+.form-input::placeholder {
+    color: #000000;
+    opacity: 0.6;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-checkbox {
+    width: 31px;
+    height: 24px;
+    border: 1px solid #4E8DF5;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    cursor: pointer;
+    width: 162px;
+    height: 29px;
+}
+
+.forgot-password {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px solid #4E8DF5;
+    transition: color 0.3s ease;
+    width: 198px;
+    height: 29px;
+}
+
+.forgot-password:hover {
+    color: #4E8DF5;
+}
+
+.login-button {
+    width: 684px;
+    height: 64px;
+    background-color: #4E8DF5;
+    border: 1px solid #D9D9D9;
+    border-radius: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.21;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.login-button:hover {
+    background-color: #3A7AE8;
+}
+
+.register-link {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 1.21;
+    color: #000000;
+    width: 476px;
+    height: 39px;
+    margin: 0 auto;
+}
+
+.register-text {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px solid #4E8DF5;
+    transition: color 0.3s ease;
+}
+
+.register-text:hover {
+    color: #4E8DF5;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .desktop-frame {
+        width: 100%;
+        max-width: 1440px;
+        height: auto;
+        min-height: 1268px;
+    }
+    
+    .navbar {
+        width: 100%;
+        position: relative;
+    }
+    
+    .main-background {
+        width: 100%;
+        position: relative;
+        height: auto;
+        min-height: 1178px;
+    }
+    
+    .login-form-container {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 50px auto;
+        max-width: 766px;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        position: relative;
+    }
+    
+    .nav-logo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-bottom: 10px;
+    }
+    
+    .nav-menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 10px 0;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-auth {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .login-form-container {
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+    
+    .form-input {
+        width: 100%;
+        max-width: 678px;
+    }
+    
+    .login-button {
+        width: 100%;
+        max-width: 684px;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+    }
+    
+    .nav-login,
+    .nav-register {
+        font-size: 16px;
+        padding: 6px 15px;
+        width: auto;
+        height: auto;
+    }
+    
+    .login-title {
+        font-size: 28px;
+        width: auto;
+    }
+    
+    .form-label {
+        font-size: 18px;
+        width: auto;
+    }
+    
+    .form-input {
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .checkbox-label,
+    .forgot-password {
+        font-size: 20px;
+        width: auto;
+    }
+    
+    .login-button {
+        height: 55px;
+        font-size: 28px;
+    }
+    
+    .register-link {
+        font-size: 28px;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-auth {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .login-form-container {
+        padding: 20px 15px;
+    }
+    
+    .login-title {
+        font-size: 24px;
+    }
+    
+    .form-label {
+        font-size: 16px;
+    }
+    
+    .form-input {
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .checkbox-label,
+    .forgot-password {
+        font-size: 18px;
+    }
+    
+    .login-button {
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .register-link {
+        font-size: 24px;
+    }
+}
+
+/* Error message styling */
+.error-message {
+    color: #FF0000;
+    font-size: 14px;
+    margin-top: 5px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active state for navigation */
+.nav-link.active {
+    color: #4E8DF5;
+    font-weight: 700;
+}
